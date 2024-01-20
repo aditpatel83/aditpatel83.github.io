@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html>
-<body>
+<body onload="sendMessage()">
 
-<h1>The Window Object</h1>
-<h2>The alert() Method</h2>
-
-<p>Click the button to display an alert box.</p>
-
-<button onclick="myFunction()">Try it</button>
+<h1>BAPS Dallas Guest Check-in</h1>
 
 <script>
-function myFunction() {
-  alert(get('message'));
+function sendMessage(){
+  //const url = `https://api.telegram.org/bot${tg.token}/sendMessage?chat_id=${tg.chat_id}&text=${text}`; // The url to request
+  //const xht = new XMLHttpRequest ();
+  //xht.open ("GET", url);
+  //xht.send ();
+  alert('Message "'+get('message')+'" sent');  
 }
 function get(name){
    if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
       return decodeURIComponent(name[1]);
 }
 </script>
-
 </body>
 </html>
