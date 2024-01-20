@@ -19,9 +19,10 @@ function sendMessage(){
     const xht = new XMLHttpRequest();
     xht.onreadystatechange = function() {
       if (this.readyState == 4) {
-        document.getElementById("response").innerHTML = 'Response<br>'+this.responseText;
         if (this.status > 299 || this.status < 200) {
-          alert('Telegram API failed '+this.responseText);
+          document.getElementById("response").innerHTML = '<b style="font-color: red;">Error</b><br>'+JSON.stringify(this.responseText, null, "\t");;
+        } else {
+          document.getElementById("response").innerHTML = '<b style="font-color: red;">Response</b><br>'+JSON.stringify(this.responseText, null, "\t");;          
         }
       }
     };    
