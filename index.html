@@ -7,7 +7,7 @@
 </head>
 <body onload="sendMessage()">
 
-<h1>BAPS Dallas Guest Check-in</h1>
+<h1 id="message">BAPS Dallas Guest Check-in</h1>
 
 <script>
 function sendMessage(){
@@ -16,10 +16,12 @@ function sendMessage(){
     const xht = new XMLHttpRequest();
     xht.onreadystatechange = function() {
       if (this.readyState == 4) {
-        if (this.status > 199 || this.status < 300)
+        if (this.status > 199 || this.status < 300) {
+          document.getElementById("message").innerHTML = this.responseText;
           alert(this.responseText); 
-        else
+        } else {
           alert('Telegram API failed '+this.responseText);
+        }
       }
     };    
     xht.open('GET', url);
