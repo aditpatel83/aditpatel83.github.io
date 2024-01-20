@@ -11,7 +11,7 @@
 
 <script>
 function myFunction() {
-  alert(get(message));
+  alert(get('message'));
 }
 function get(name){
    if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
