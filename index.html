@@ -2,13 +2,13 @@
 <html>
 <body onload="sendMessage()">
 
-<h1>BAPS Dallas Guest Check-in BOT</h1>
+<h1>BAPS Dallas Guest Check-in</h1>
 
 <script>
 function sendMessage(){
-  const url = 'https://api.telegram.org/bot6921730817:AAHLMw39nTXdgxL5hubqpIReX0ODX9CBdbA/sendMessage?chat_id=-4191231453&text=get('message')'; // The url to request
+  const url = 'https://api.telegram.org/bot6921730817:AAHLMw39nTXdgxL5hubqpIReX0ODX9CBdbA/sendMessage?chat_id=-4191231453&text='+get('message'); // The url to request
   const xht = new XMLHttpRequest ();
-  xht.open ("GET", url);
+  xht.open ('GET', url);
   xht.send ();
   alert('Message "'+get('message')+'" sent');  
 }
