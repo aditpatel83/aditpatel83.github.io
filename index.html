@@ -28,7 +28,7 @@ function sendMessage(){
         if (this.status > 299 || this.status < 200) {
           document.getElementById("response").innerHTML = '<b style="color: red;">Error</b><br><textarea>'+JSON.stringify(JSON.parse(this.responseText), null, '\t')+'</textarea>';
         } else {
-          document.getElementById("response").innerHTML = '<b style="color: green;">Response</b><br><textarea>'+JSON.stringify(JSON.parse(this.responseText), null, '\t')+'</textarea>';          
+          document.getElementById("response").innerHTML = '<b style="color: green;">Success</b><br><textarea>'+JSON.stringify(JSON.parse(this.responseText), null, '\t')+'</textarea>';          
         }
       }
     };    
