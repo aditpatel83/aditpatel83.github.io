@@ -18,11 +18,11 @@ function sendMessage(){
       if (this.readyState == 4) {
         if (this.status > 199 || this.status < 300) {
           document.getElementById("message").innerHTML = this.responseText;
-          alert('Message sent'); 
+          //alert('Message sent'); 
         } else {
           alert('Telegram API failed '+this.responseText);
         }
-        window.close();
+        //window.close();
       }
     };    
     xht.open('GET', url);
@@ -30,7 +30,7 @@ function sendMessage(){
   } catch(err) {
     alert('Error sending message: '+err.message);
   }
-  window.close();
+  //window.close();
 }
 function get(name){
    if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
