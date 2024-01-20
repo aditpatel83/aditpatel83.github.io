@@ -18,7 +18,7 @@ function sendMessage(){
       if (this.readyState == 4) {
         if (this.status > 199 || this.status < 300) {
           document.getElementById("message").innerHTML = this.responseText;
-          alert(this.responseText); 
+          alert('Message sent'); 
         } else {
           alert('Telegram API failed '+this.responseText);
         }
