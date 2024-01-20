@@ -9,9 +9,16 @@ function sendMessage(){
   const url = 'https://api.telegram.org/bot6921730817:AAHLMw39nTXdgxL5hubqpIReX0ODX9CBdbA/sendMessage?chat_id=-1002111050136&text='+get('message'); // The url to request
   try {
     const xht = new XMLHttpRequest();
+    xht.onreadystatechange = function() {
+      if (this.readyState == 4) {
+        if (this.status > 199 || this.status < 300)
+          alert('Message "'+get('message')+'" sent'); 
+        else
+          alert('Telegram API failed '+this.responseText);
+      }
+    };    
     xht.open('GET', url);
     xht.send();
-    alert('Message "'+get('message')+'" sent '+(JSON.parse(xht.responseText)).status); 
   } catch(err) {
     alert('Error sending message: '+err.message);
   }
