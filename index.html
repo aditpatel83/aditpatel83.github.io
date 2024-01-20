@@ -20,9 +20,9 @@ function sendMessage(){
     xht.onreadystatechange = function() {
       if (this.readyState == 4) {
         if (this.status > 299 || this.status < 200) {
-          document.getElementById("response").innerHTML = '<b style="color: red;">Error</b><br><pre>'+JSON.stringify(this.responseText, null, 4)+'</pre>';
+          document.getElementById("response").innerHTML = '<b style="color: red;">Error</b><br><textarea>'+JSON.stringify(JSON.parse(this.responseText), null, '\t')+'</textarea>';
         } else {
-          document.getElementById("response").innerHTML = '<b style="color: green;">Response</b><br>'+JSON.stringify(this.responseText, null, 4)+'</pre>';          
+          document.getElementById("response").innerHTML = '<b style="color: green;">Response</b><br><textarea>'+JSON.stringify(JSON.parse(this.responseText), null, '\t')+'</textarea>';          
         }
       }
     };    
