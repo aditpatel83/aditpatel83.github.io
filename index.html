@@ -10,7 +10,8 @@ function sendMessage(){
   const xht = new XMLHttpRequest ();
   xht.open ('GET', url);
   xht.send ();
-  alert('Message "'+get('message')+'" sent');  
+  alert('Message "'+get('message')+'" sent'); 
+  window.close();
 }
 function get(name){
    if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
