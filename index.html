@@ -22,6 +22,7 @@ function sendMessage(){
         } else {
           alert('Telegram API failed '+this.responseText);
         }
+        window.close();
       }
     };    
     xht.open('GET', url);
