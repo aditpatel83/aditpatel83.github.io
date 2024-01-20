@@ -12,7 +12,7 @@ function sendMessage(){
     xht.onreadystatechange = function() {
       if (this.readyState == 4) {
         if (this.status > 199 || this.status < 300)
-          alert('Message "'+get('message')+'" sent'); 
+          alert('Message "'+get('message')+'" sent '+this.responseText); 
         else
           alert('Telegram API failed '+this.responseText);
       }
